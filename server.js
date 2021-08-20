@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const userRoutes = require("./routes/user.routes");
 const postRoutes = require("./routes/post.routes");
 const videoRoutes = require("./routes/video.routes");
+const messageRoutes = require("./routes/message.routes");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const path = require("path");
@@ -90,7 +91,7 @@ app.get("/jwtid", requireAuth, (req, res) => {
 app.use("/api/user", userRoutes);
 app.use("/api/post", postRoutes);
 app.use("/api/video", videoRoutes);
-
+app.use("/api/message", messageRoutes);
 
 // Routes ----------------------------------------------
 // app.use("/api/posts", require("./routes/post.routes"));
